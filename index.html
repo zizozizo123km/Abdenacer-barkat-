@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>السيرة الذاتية - عبد الناصر بركات</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f0f2f5;
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+</head>
+<body class="p-4">
+  <div class="max-w-4xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 flex flex-col sm:flex-row items-center justify-between rounded-t-xl">
+      <div class="flex items-center space-x-6 rtl:space-x-reverse">
+        <img src="/Picsart_25-04-25_14-28-49-349.jpg?text=صورة+عبد+الناصر" class="w-24 h-24 rounded-full border-4 border-white shadow-lg" />
+        <div>
+          <h1 class="text-3xl font-extrabold mb-1">عبد الناصر بركات</h1>
+          <p class="text-lg">مطور ويب</p>
+        </div>
+      </div>
+      <div class="mt-4 sm:mt-0 text-sm text-white">
+        <p><strong>العمر:</strong> 21 سنة</p>
+        <p><strong>الموقع:</strong> وادي سوف، الجزائر</p>
+        <p><strong>الهاتف:</strong> 0675767460</p>
+        <p><strong>البريد:</strong> dzs325105@gmail.com</p>
+      </div>
+    </header>
+
+    <main class="p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- عني -->
+      <section class="lg:col-span-2 bg-gray-50 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-2">ملخص عني</h2>
+        <p>
+          مطور ويب شاب ومتحمس يبلغ من العمر 21 عامًا، مقيم في وادي سوف، الجزائر. أمتلك شغفًا كبيرًا ببناء تطبيقات ويب مبتكرة وفعالة.
+        </p>
+      </section>
+
+      <!-- المهارات -->
+      <section class="bg-gray-50 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-2">المهارات</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>HTML5 & CSS3</li>
+          <li>JavaScript</li>
+          <li>Tailwind CSS</li>
+          <li>Git & GitHub</li>
+          <li>Responsive Design</li>
+        </ul>
+      </section>
+
+      <!-- الخبرة -->
+      <section class="lg:col-span-3 bg-gray-50 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-2">الخبرة</h2>
+        <h3 class="text-lg font-semibold">مطور واجهات - شركة XYZ</h3>
+        <p class="text-sm text-blue-600 mb-2">2023 - حتى الآن</p>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>تطوير واجهات باستخدام HTML/CSS/JS</li>
+          <li>العمل مع فريق التصميم</li>
+          <li>تحسين تجربة المستخدم</li>
+        </ul>
+      </section>
+
+      <!-- التعليم -->
+      <section class="lg:col-span-3 bg-gray-50 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-2">التعليم</h2>
+        <h3 class="font-semibold">شهادة تطوير الويب - المعهد الوطني وادي سوف</h3>
+        <p class="text-sm text-blue-600 mb-2">2021 - 2023</p>
+        <p>تخصص: تطوير تطبيقات الويب.</p>
+      </section>
+
+      <!-- التواصل -->
+      <section class="lg:col-span-3 bg-gray-50 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-blue-700 mb-3 border-b pb-2">تواصل معي</h2>
+        <form id="contactForm" class="space-y-3">
+          <input type="text" id="name" placeholder="الاسم" required class="w-full p-2 border rounded" />
+          <input type="email" id="email" placeholder="البريد الإلكتروني" required class="w-full p-2 border rounded" />
+          <input type="text" id="subject" placeholder="الموضوع" required class="w-full p-2 border rounded" />
+          <textarea id="message" rows="4" placeholder="الرسالة" required class="w-full p-2 border rounded"></textarea>
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+            إرسال الرسالة
+          </button>
+          <div id="formMessage" class="text-sm text-center mt-2"></div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center p-3 rounded-b-xl">
+      &copy; 2025 عبد الناصر بركات
+    </footer>
+  </div>
+
+  <!-- JavaScript لإرسال الرسالة إلى بوت تليجرام -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+      const formMessage = document.getElementById('formMessage');
+
+      formMessage.textContent = '⏳ جاري الإرسال...';
+      formMessage.className = 'text-blue-600 text-sm text-center';
+
+      const fullMessage = `
+📬 *رسالة جديدة من موقع السيرة الذاتية:*
+👤 الاسم: ${name}
+📧 البريد: ${email}
+📌 الموضوع: ${subject}
+📝 الرسالة:
+${message}
+      `;
+
+      const botToken = '7634714985:AAF2IWTbT7PHMPo-iLEczroP3-hEANH8F4M';
+      const chatId = '6049060650';
+
+      try {
+        const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            chat_id: chatId,
+            text: fullMessage,
+            parse_mode: 'Markdown'
+          })
+        });
+
+        if (response.ok) {
+          formMessage.textContent = '✅ تم إرسال الرسالة بنجاح!';
+          formMessage.className = 'text-green-600 text-sm text-center';
+          document.getElementById('contactForm').reset();
+        } else {
+          formMessage.textContent = '❌ فشل في إرسال الرسالة.';
+          formMessage.className = 'text-red-600 text-sm text-center';
+        }
+      } catch (err) {
+        console.error(err);
+        formMessage.textContent = '❌ حدث خطأ أثناء الإرسال.';
+        formMessage.className = 'text-red-600 text-sm text-center';
+      }
+    });
+  </script>
+</body>
+</html>
